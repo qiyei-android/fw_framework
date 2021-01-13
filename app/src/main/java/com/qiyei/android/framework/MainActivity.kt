@@ -21,8 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     private val mMenuList: MutableList<MainMenu> = ArrayList()
 
-    private val names = emptyList<String>()
-    private val clazzs = arrayOf<Class<out Activity>>()
+    private val names = arrayOf<String>(
+        "测试")
+    private val clazzs = arrayOf<Class<out Activity>>(
+        MainActivity::class.java
+    )
 
     /**
      * ViewModel
