@@ -25,7 +25,7 @@ abstract class CommonRvAdapter<E,VB : ViewBinding>(private val mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
         try {
-            val method = mItemLayoutViewBindingClazz.getDeclaredMethod("inflate", LayoutInflater::class.java)
+            val method = mItemLayoutViewBindingClazz.getDeclaredMethod("inflate", LayoutInflater::class.java,ViewGroup::class.java,Boolean::class.java)
             val binding = method.invoke(null, LayoutInflater.from(mContext),parent,false) as VB
             return CommonViewHolder(binding,binding.root)
         } catch (e: NoSuchMethodException) {
